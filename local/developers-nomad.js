@@ -1,9 +1,18 @@
 const totalRuntime = 20;
 
+const scene1Shots = [
+  { id: '1.1', image: '../public/dev-03-scene1.png', title: 'Developers in a meeting', description: 'Lauri Himanen discusses with developers in a meeting, with code visible on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen', 'Developers – TBC'] }
+];
+
+const scene2Shots = [
+  { id: '2.1', image: '../public/lauri-to-camera.png', title: 'Lauri speaks to camera', description: 'Lauri speaks to camera with NOMAD performance and metrics shown on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen'] },
+  { id: '2.2', image: '../public/Focused Coding Workspace.png', title: 'Developer coding', description: 'Developer sitting at a desk working on some coding activity.', location: 'Room 1.108', actors: ['Developer – TBC'] }
+];
+
 const raw = [
-  [1,'Building the NOMAD ecosystem',0,6,'NOMAD brings together increasingly diverse types of data, workflows, and scientific communities.','Lauri Himanen discusses with developers in a meeting; code is visible on the screen.','Office 1.108, 3–4 people',['Lauri Himanen','Developers – TBC'],'mixed'],
-  [2,'Managing complexity behind NOMAD',6,9,'Our job as the core development team is to manage the complexity behind it, making sure NOMAD remains stable, secure, and reliable so researchers can focus on their science.','Lauri Himanen speaks to camera with the screen behind him and code or performance metrics visible.','Office 1.108',['Lauri Himanen'],'camera'],
-  [3,'Join the community',15,5,'For more information, visit our website and join our community on Discord.','Lauri Himanen speaks to camera; a developer at a desk is writing code in the background.','Office 1.108 / office 1.106',['Lauri Himanen','Ahmed I.'],'mixed']
+  [1,'Building the NOMAD ecosystem',0,6,'NOMAD brings together increasingly diverse types of data, workflows, and scientific communities.','Lauri Himanen discusses with developers in a meeting, with code visible on the screen.','Room 1.108',['Lauri Himanen','Developers – TBC'],'camera'],
+  [2,'Managing complexity behind NOMAD',6,9,'Our job as the core development team is to manage the complexity behind it, making sure NOMAD remains stable, secure, and reliable so researchers can focus on their science.','Lauri speaks to camera with NOMAD performance and metrics shown on the screen, while a developer works on code in parallel.','Room 1.108',['Lauri Himanen','Developer – TBC'],'mixed'],
+  [3,'Join the community',15,5,'For more information, visit our website and join our community on Discord.','Lauri Himanen speaks to camera as the final framing settles into the screen.','Room 1.108',['Lauri Himanen'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
@@ -51,6 +60,10 @@ function renderTrack() {
 function render() {
   const s = scenes[active];
   const percent = (time / totalRuntime) * 100;
+  const isSceneOne = active === 0;
+  const isSceneTwo = active === 1;
+  const isSceneThree = active === 2;
+  const isClosing = active === scenes.length - 1;
 
   $('timecode').textContent = fmt(time);
   $('playhead').style.left = `${percent}%`;
@@ -59,7 +72,7 @@ function render() {
   $('duration').textContent = `${s.duration} SEC`;
   $('preview').className = `preview preview-${s.type}`;
   $('shot-label').textContent = s.type === 'screen' ? '▣  SCREEN RECORDING' : s.type === 'mixed' ? '▣  MIXED FOOTAGE' : '▣  CAMERA FOOTAGE';
-  $('normal-preview').hidden = false;
+  $('normal-preview').hidden = true;
   $('preview-location').textContent = s.location;
   $('victoria-preview').hidden = true;
   $('triangle-preview').hidden = true;
@@ -74,6 +87,62 @@ function render() {
   $('detail-duration').textContent = `${s.duration} seconds`;
   $('previous').disabled = active === 0;
   $('next').disabled = active === scenes.length - 1;
+
+  if (isSceneOne) {
+    $('victoria-preview').src = '../public/dev-03-scene1.png';
+    $('victoria-preview').alt = 'Lauri Himanen discussing with developers in a meeting with code on the screen';
+    $('victoria-preview').hidden = false;
+    $('scene1-shot-list').hidden = false;
+    $('scene1-shot-list').innerHTML = scene1Shots.map((shot) => `
+      <article class="shot-detail">
+        <div class="shot-detail-number">${shot.id}</div>
+        <div>
+          <strong>${shot.title}</strong>
+          <p>${shot.description}</p>
+          <dl>
+            <div><dt>LOCATION</dt><dd>${shot.location}</dd></div>
+            <div><dt>ACTORS</dt><dd>${shot.actors.join(', ')}</dd></div>
+          </dl>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  if (isSceneTwo) {
+    $('triangle-preview').className = 'triangle-preview two-shot-array';
+    $('triangle-preview').hidden = false;
+    $('triangle-preview').innerHTML = scene2Shots.map((shot) => `
+      <figure class="triangle-shot">
+        <img src="${shot.image}" alt="${shot.title}">
+        <figcaption><b>FOOTAGE ${shot.id}</b><span>${shot.title}</span></figcaption>
+      </figure>
+    `).join('');
+    $('standard-footage').hidden = true;
+  }
+
+  if (isSceneThree) {
+    $('victoria-preview').src = '../public/lauri-to-camera.png';
+    $('victoria-preview').alt = 'Lauri Himanen speaking to camera';
+    $('victoria-preview').style.objectFit = 'cover';
+    $('victoria-preview').style.objectPosition = 'center';
+    $('victoria-preview').hidden = false;
+    $('triangle-preview').hidden = true;
+    $('normal-preview').hidden = true;
+    $('preview').classList.add('preview-camera');
+  } else {
+    $('victoria-preview').style.objectFit = 'contain';
+    $('victoria-preview').style.objectPosition = 'center';
+    $('preview').classList.remove('preview-camera');
+  }
+
+  if (isClosing) {
+    $('preview').classList.add('final-scene-preview');
+    $('victoria-preview').hidden = true;
+    $('normal-preview').hidden = true;
+    $('triangle-preview').hidden = true;
+  } else {
+    $('preview').classList.remove('final-scene-preview');
+  }
 
   renderList();
   renderTrack();
