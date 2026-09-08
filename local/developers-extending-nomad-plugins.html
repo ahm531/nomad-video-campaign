@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>NOMAD Oasis · Extending NOMAD with plugins</title>
-  <link rel="stylesheet" href="../app/globals.css?v=11">
+  <link rel="stylesheet" href="../app/globals.css?v=14">
   <style>
     .round-button{font-size:13px}.detail-icon{font-size:16px}.empty{padding:24px;color:#758192;font-size:12px}
   </style>
@@ -18,7 +18,7 @@
         <div class="eyebrow">NOMAD VIDEO CAMPAIGN</div>
         <h1>NOMAD Oasis · Extending NOMAD with plugins</h1>
       </div>
-      <div class="topbar-meta"><span>4 scenes</span><span class="dot"></span><span>00:20</span></div>
+      <div class="topbar-meta"><span>5 scenes</span><span class="dot"></span><span>00:24</span></div>
     </header>
 
     <section class="timeline" aria-label="Video timeline">
@@ -26,7 +26,7 @@
         <div class="transport">
           <button id="play" class="round-button" aria-label="Play timeline">▶</button>
           <span id="timecode" class="timecode">0:00</span>
-          <span class="time-total">/ 0:20</span>
+          <span class="time-total">/ 0:24</span>
         </div>
         <div class="legend">
           <span><i class="camera-key"></i>Camera</span>
@@ -34,11 +34,11 @@
           <span><i class="mixed-key"></i>Mixed</span>
         </div>
       </div>
-      <div class="ruler-row"><span>0:00</span><span>0:05</span><span>0:10</span><span>0:15</span><span>0:20</span></div>
+      <div class="ruler-row"><span>0:00</span><span>0:05</span><span>0:10</span><span>0:15</span><span>0:24</span></div>
       <div class="track-wrap">
         <div id="track" class="track"></div>
         <div id="playhead" class="playhead"><span></span></div>
-        <input id="scrubber" class="scrubber" type="range" min="0" max="20" step=".1" value="0" aria-label="Seek video timeline">
+        <input id="scrubber" class="scrubber" type="range" min="0" max="24" step=".1" value="0" aria-label="Seek video timeline">
       </div>
     </section>
 
@@ -65,11 +65,11 @@
             <span>Footage placeholder</span>
             <small id="preview-location"></small>
           </div>
-          <img id="victoria-preview" class="victoria-preview" src="../public/victoria-lab-camera.png" alt="Illustrative camera framing" hidden>
+          <img id="victoria-preview" class="victoria-preview" src="../public/speaker-victoria-coors-lab.png" alt="Illustrative camera framing" hidden>
           <div id="triangle-preview" class="triangle-preview" hidden></div>
           <div id="end-card" class="end-card" hidden>
-            <div class="end-card-speaker"><img src="../public/christoph-lab-camera.png" alt="Christoph Koch speaking to camera"></div>
-            <div class="end-card-message"><img class="closing-logo oasis-closing-logo" src="../public/oasis-horizontal.png" alt="NOMAD Oasis"><h3>Build your own<br>RDM solution.</h3><div class="developed-by"><span>Developed by</span><img src="../public/fairmat-logo.png" alt="FAIRmat"></div></div>
+            <div class="end-card-speaker"><img src="../public/speaker-christoph-koch-lab.png" alt="Christoph Koch speaking to camera"></div>
+            <div class="end-card-message"><img class="closing-logo oasis-closing-logo" src="../public/brand-oasis-horizontal.png" alt="NOMAD Oasis"><h3>Build your own<br>RDM solution.</h3><div class="developed-by"><span>Developed by</span><img src="../public/brand-fairmat.png" alt="FAIRmat"></div></div>
           </div>
           <div id="preview-time" class="preview-time"></div>
         </div>
@@ -115,6 +115,6 @@
       </aside>
     </div>
   </main>
-  <script src="./developers-extending-nomad-plugins.js"></script>
-</body>
+  <script src="./developers-extending-nomad-plugins.js?v=2"></script>
+<script src="./closing-card.js?v=2"></script><script src="./final-logo.js?v=1"></script></body>
 </html>

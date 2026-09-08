@@ -25,17 +25,13 @@ This site is a production-planning tool, not the final NOMAD product website.
 - `app/globals.css` — shared styles for the home page and all storyboards.
 - `public/` — screenshots, generated illustrations, speakers, and official logos.
 
-Current storyboard routes:
-
-- `/local/central.html`
-- `/local/oasis.html`
-
-The campaign library is `/local/`.
+The campaign library is `/local/`. Every other `local/*.html` file, except
+`index.html`, is a storyboard route and must remain linked from the library.
 
 ## Core consistency rules
 
 1. Preserve the established dark production-planning interface unless the user requests a redesign.
-2. Each video card on the home page must show its title, status, duration, scene count, image status, short description, and a working link.
+2. Each video card on the home page must show its title, content category, duration, scene count, product family, short description, and a working link.
 3. Storyboards should use the same transcript, timeline, stage, navigation, and details-panel layout.
 4. Use the user’s wording as authoritative. Correct obvious spelling and punctuation without changing meaning.
 5. Keep scene titles short and descriptive. They are navigation labels, not replacements for the transcript.
@@ -65,6 +61,18 @@ Field meanings:
 - `actors`: array of people or roles, such as `['Christoph Koch']` or `['Screen only']`.
 - `type`: `camera`, `screen`, or `mixed`.
 
+The visible footage taxonomy is fixed:
+
+- `camera` → `CAMERA FOOTAGE`
+- `screen` → `SCREEN RECORDING`
+- `mixed` → `MIXED MEDIA`
+
+Every stage label combines the unique scene-local footage ID and category, for
+example `FOOTAGE 03 · SCREEN RECORDING`. Multi-shot cards use the explicit shot
+ID from their data, for example `FOOTAGE 2.1` and `FOOTAGE 2.2`. Do not introduce
+synonyms such as “video,” “screen capture,” “talking shot,” or “mixed footage” in
+these category labels.
+
 Example:
 
 ```js
@@ -82,9 +90,10 @@ Example:
 
 ## Timing rules
 
-- Most campaign videos currently target exactly 120 seconds.
+- Spoken-content runtimes vary by campaign. Every storyboard adds a separate
+  four-second FAIRmat closing scene after that content runtime.
 - `start` values must be cumulative. A scene starts when the previous scene ends.
-- The final scene’s `start + duration` must equal the target runtime.
+- The final FAIRmat scene’s `start + duration` must equal the displayed total runtime.
 - Timeline widths are calculated as `duration / 1.2` percent for a 120-second video.
 - After changing a duration, recalculate every later `start` value.
 - Update the duration and scene count shown on the home-page card and storyboard header.
@@ -123,7 +132,9 @@ Use the existing Oasis storyboard as the clean baseline when a new video has no 
 2. Set the page title, header title, scene count, runtime, and script source.
 3. Create `local/<short-name>.js` with its own `raw` scene data and standard render functions.
 4. Keep placeholders visible until images are explicitly requested.
-5. Add a new card to `local/index.html` with a unique index, title, summary, scene count, runtime, image status, and route.
+5. Add a new card to `local/index.html` with a unique index, title, summary, scene count, runtime, product family, and route.
+   Use exactly one content category: `Explainer`, `Developer story`, or
+   `Researcher story`.
 6. Give the card a restrained visual variation through existing CSS rather than creating an unrelated design.
 7. Add an `All videos` link to the storyboard header.
 8. Test the home-page link and direct storyboard URL.
@@ -145,15 +156,23 @@ Scene indexes in JavaScript are zero-based even though visible scene IDs begin a
 
 ## Image and asset handling
 
-- Save project assets under `public/` with descriptive lowercase names, for example `scene-11-scientist-explore.png`.
+- Save project assets under `public/` with lowercase kebab-case names. Do not use
+  spaces, uppercase extensions, personal shorthand, or generic names such as
+  `scene1.png`.
+- Scene visuals use `<video-slug>-scene-<two-digit-scene>-<description>.<ext>`.
+  Multi-shot visuals insert `shot-<two-digit-shot>`, for example
+  `central-scene-07-shot-02-xps-visualization.png`.
+- Reusable speaker visuals use `speaker-<person-name>-<context>.png`, for example
+  `speaker-victoria-coors-lab.png`.
+- Shared logos use `brand-<brand>-<orientation>.png`, except the existing favicon.
 - Keep original supplied assets intact. Copy them into `public/` rather than relying on temporary clipboard paths.
 - Use official horizontal brand assets where the layout is horizontal:
-  - `public/nomad-horizontal.png`
-  - `public/oasis-horizontal.png`
-  - `public/fairmat-logo.png`
+  - `public/brand-nomad-horizontal.png`
+  - `public/brand-oasis-horizontal.png`
+  - `public/brand-fairmat.png`
 - Talking-to-camera assets currently include:
-  - `public/victoria-lab-camera.png`
-  - `public/christoph-lab-camera.png`
+  - `public/speaker-victoria-coors-lab.png`
+  - `public/speaker-christoph-koch-lab.png`
 - Central scenes featuring Victoria use her established laboratory visual.
 - Oasis scenes featuring Christoph use his established laboratory visual.
 - All full-frame screenshots and generated scene images must fit inside the stage. Do not crop essential interface content.
@@ -162,14 +181,30 @@ Scene indexes in JavaScript are zero-based even though visible scene IDs begin a
 
 ## Closing-card rules
 
-The Central and Oasis closing cards share the same structure:
+Explainer and developer-story closing cards are configured centrally in
+`local/closing-card.js`. Add new eligible pages to the `closingCards` map rather
+than duplicating closing logic in the storyboard script.
 
-- speaker on the left;
-- official horizontal NOMAD or NOMAD Oasis logo on the right;
-- slogan: `Share data, not files.`;
-- credit: `Developed by` with only the FAIRmat logo.
+Central and Oasis closing cards share the same structure:
 
-Central uses Victoria and the official NOMAD horizontal logo. Oasis uses Christoph and the official NOMAD Oasis horizontal logo. Do not add other institutional developer logos unless the user explicitly requests them.
+- speaker speaking to camera across the left two-thirds;
+- a white information panel across the right third;
+- the appropriate official horizontal logo at the top;
+- the product statement in the middle;
+- `Developed by` with `public/brand-fairmat-with-text.png` at the bottom.
+
+NOMAD Central uses `From research data to shared knowledge.` NOMAD Oasis uses
+`One platform, built around your laboratory.` Use the respective speaker for each video. If that speaker does
+not yet have an approved image, retain the named `Speaker image pending`
+placeholder; never substitute another person. Do not add other institutional
+developer logos unless the user explicitly requests them.
+
+Every video—including researcher stories—then ends with a separate four-second
+FAIRmat logo scene configured by `local/final-logo.js`. It uses
+`public/brand-fairmat-end-card.png` centered on white. Keep this scene last,
+include it in the scene count, and add its four seconds to the displayed runtime,
+timeline, scrubber maximum, and home-page metadata. The product/speaker closing
+card remains immediately before it on eligible explainer and developer videos.
 
 ## Editing cautions
 

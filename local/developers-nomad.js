@@ -1,12 +1,12 @@
-const totalRuntime = 20;
+const totalRuntime = 24;
 
 const scene1Shots = [
-  { id: '1.1', image: '../public/dev-03-scene1.png', title: 'Developers in a meeting', description: 'Lauri Himanen discusses with developers in a meeting, with code visible on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen', 'Developers – TBC'] }
+  { id: '1.1', image: '../public/developers-nomad-scene-01-team-meeting.png', title: 'Developers in a meeting', description: 'Lauri Himanen discusses with developers in a meeting, with code visible on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen', 'Developers – TBC'] }
 ];
 
 const scene2Shots = [
-  { id: '2.1', image: '../public/lauri-to-camera.png', title: 'Lauri speaks to camera', description: 'Lauri speaks to camera with NOMAD performance and metrics shown on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen'] },
-  { id: '2.2', image: '../public/Focused Coding Workspace.png', title: 'Developer coding', description: 'Developer sitting at a desk working on some coding activity.', location: 'Room 1.108', actors: ['Developer – TBC'] }
+  { id: '2.1', image: '../public/speaker-lauri-himanen-camera.png', title: 'Lauri speaks to camera', description: 'Lauri speaks to camera with NOMAD performance and metrics shown on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen'] },
+  { id: '2.2', image: '../public/developers-nomad-scene-02-coding-workspace.png', title: 'Developer coding', description: 'Developer sitting at a desk working on some coding activity.', location: 'Room 1.108', actors: ['Developer – TBC'] }
 ];
 
 const raw = [
@@ -71,7 +71,7 @@ function render() {
   $('scene-counter').textContent = `SCENE ${String(s.id).padStart(2,'0')} OF ${scenes.length}`;
   $('duration').textContent = `${s.duration} SEC`;
   $('preview').className = `preview preview-${s.type}`;
-  $('shot-label').textContent = s.type === 'screen' ? '▣  SCREEN RECORDING' : s.type === 'mixed' ? '▣  MIXED FOOTAGE' : '▣  CAMERA FOOTAGE';
+  $('shot-label').textContent=`FOOTAGE ${String(s.id).padStart(2,'0')} · ${s.type==='screen'?'SCREEN RECORDING':s.type==='mixed'?'MIXED MEDIA':'CAMERA FOOTAGE'}`;
   $('normal-preview').hidden = true;
   $('preview-location').textContent = s.location;
   $('victoria-preview').hidden = true;
@@ -89,7 +89,7 @@ function render() {
   $('next').disabled = active === scenes.length - 1;
 
   if (isSceneOne) {
-    $('victoria-preview').src = '../public/dev-03-scene1.png';
+    $('victoria-preview').src = '../public/developers-nomad-scene-01-team-meeting.png';
     $('victoria-preview').alt = 'Lauri Himanen discussing with developers in a meeting with code on the screen';
     $('victoria-preview').hidden = false;
     $('scene1-shot-list').hidden = false;
@@ -121,7 +121,7 @@ function render() {
   }
 
   if (isSceneThree) {
-    $('victoria-preview').src = '../public/lauri-to-camera.png';
+    $('victoria-preview').src = '../public/speaker-lauri-himanen-camera.png';
     $('victoria-preview').alt = 'Lauri Himanen speaking to camera';
     $('victoria-preview').style.objectFit = 'cover';
     $('victoria-preview').style.objectPosition = 'center';
