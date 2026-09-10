@@ -1,8 +1,23 @@
-const totalRuntime = 24;
+const totalRuntime = 36;
+
+const productionReadyShots = {
+  1: [
+    { id: '1.1', image: '../public/oasis-scene-10-team-discussion.png', title: 'Research infrastructure discussion', description: 'Researchers discuss how NOMAD Oasis supports research data infrastructure across groups, institutions, and collaborative networks.', location: 'Room 1.108', actors: ['Researchers – TBC'] }
+  ],
+  2: [
+    { id: '2.1', image: '../public/Joe_speaks_to_camera.png', title: 'Joe speaks to camera', description: 'Joe explains how multiple Oases can form a federated data infrastructure.', location: 'TBD', actors: ['Joseph Rudzinski'] }
+  ],
+  3: [
+    { id: '3.1', image: '../public/Federated Research Data Infrastructure Across Europe.png', title: 'Federated infrastructure across Europe', description: 'Network and institution graphic representing a distributed research data infrastructure across Europe.', location: 'Graphic', actors: ['No speaker'] },
+    { id: '3.2', image: '../public/Joe_speaks_to_camera.png', title: 'Joe speaks to camera', description: 'Joe describes the scale and breadth of distributed research data infrastructures.', location: 'TBD', actors: ['Joseph Rudzinski'] }
+  ]
+};
+
 const raw = [
-  [1,'Oasis requires ongoing maintenance',0,7,'Setting up a NOMAD Oasis is only the beginning. It needs to be updated and maintained as the requirements evolve.','People sitting around the table; Joe showing NOMAD slides.','Office 1.108',['People – TBC','Joseph Rudzinski'],'mixed'],
-  [2,'Reusable solutions for production Oases',7,11,'We develop reusable solutions so that running an Oasis doesn’t depend on one person knowing every detail. This makes Oases easier to install, update, and maintain, without every organization having to solve the same infrastructure problems from scratch.','Joseph Rudzinski speaks to camera in his office with monitors in the background.','Joe’s office with monitors in the background',['Joseph Rudzinski'],'camera'],
-  [3,'Join the community',18,2,'For more information, visit our website and join our community on Discord.','Joseph Rudzinski speaks to camera in his office with monitors in the background.','Joe’s office with monitors in the background',['Joseph Rudzinski'],'camera']
+[1,'A proven infrastructure model',0,7,'NOMAD Oasis provides a proven model for research data infrastructure across research groups, institutions, and collaborative networks.','Researchers discussing NOMAD Oasis and collaborative research infrastructure.','Room 1.108',['Researchers – TBC'],'camera'],
+[2,'Federated data infrastructure',7,11,'Instead of moving everything into one central system, multiple Oases can form a federated data infrastructure, keeping data close to where it is produced while connecting distributed research communities.','Joseph Rudzinski speaks to camera.','TBD',['Joseph Rudzinski'],'camera'],
+[3,'Distributed infrastructure across Europe',18,10,'This approach is already being applied to build distributed research data infrastructures across Europe, spanning multiple institutions, hundreds of instruments, diverse computational workflows, and research domains beyond materials science.','Split-screen: federated European infrastructure graphic on the left and Joseph Rudzinski speaking to camera on the right.','Graphic / TBD',['Joseph Rudzinski'],'mixed'],
+[4,'Join the community',28,4,'For more information visit our website and join us on Discord.','Joseph Rudzinski speaks to camera.','TBD',['Joseph Rudzinski'],'camera']
 ];
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
 let active=0,time=0,playing=false,timer=null;const $=id=>document.getElementById(id),fmt=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;

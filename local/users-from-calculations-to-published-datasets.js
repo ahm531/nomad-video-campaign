@@ -1,7 +1,7 @@
 const totalRuntime = 24;
 const raw = [
-  [1,'Managing computational data',0,10,'I use NOMAD Central to manage and publish the large amounts of computational data we generate in our research.','Aakash Naik speaks to camera with the screen behind him.','Office 1.108 with the screen behind',['Aakash Naik'],'camera'],
-  [2,'Publish and reuse datasets',10,10,'When I upload the calculation files, they are automatically parsed into structured data that I can explore. I can then publish the complete dataset with a DOI, making it accessible and reusable for other researchers.','Aakash Naik and another person sit at a computer working on a computations entry in NOMAD.','Office 1.106, with Esma',['Aakash Naik','Person – TBC'],'mixed']
+  [1,'Managing computational data',0,8,'My Ph.D. project generated several terabytes of computational data. I needed a way to preserve and share the complete dataset.','Aakash Naik speaks to camera with the screen behind him.','Office 1.108 with the screen behind',['Aakash Naik'],'camera'],
+  [2,'Publish and reuse datasets',8,12,'I published my data on NOMAD Central with a DOI that I could reference in my thesis and publications. This made my research more transparent, allowing others to inspect the data supporting my results.','Aakash Naik and another person sit at a computer working on a computations entry in NOMAD.','Office 1.106',['Aakash Naik','Esma'],'mixed']
 ];
 const sceneImageMap = {
   1: { src: '../public/speaker-aakash-naik-camera.png', alt: 'Aakash Naik speaking to camera' },

@@ -1,7 +1,7 @@
 const totalRuntime = 34;
 const raw = [
-  [1,'Different data from many experiments',0,15,'My group develops perovskite solar cells, from exploring new materials and processing them into thin films to fabricating and testing complete devices.','Eva Unger in her lab in the HZB building, with equipment and materials visible.','HZB',['Eva Unger'],'mixed'],
-  [2,'Connecting workflows and sharing knowledge',15,15,'We generate very different types of data from many experiments and researchers. We use NOMAD to connect this information across our workflows, so we can build on each other’s results and ultimately share our data and knowledge with the wider photovoltaics community.','Eva Unger speaks to camera in a studio or office setting.','HZB',['Eva Unger'],'camera']
+  [1,'Transcript pending',0,15,'The transcript of this video is still being discussed.','Eva Unger in her lab in the HZB building, with equipment and materials visible.','HZB',['Eva Unger'],'mixed'],
+  [2,'Transcript pending',15,15,'The transcript of this video is still being discussed.','Eva Unger speaks to camera in a studio or office setting.','HZB',['Eva Unger'],'camera']
 ];
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
 let active=0,time=0,playing=false,timer=null;const $=id=>document.getElementById(id),fmt=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;

@@ -1,4 +1,4 @@
-const totalRuntime = 24;
+const totalRuntime = 32;
 
 const scene1Shots = [
   { id: '1.1', image: '../public/developers-workflows-scene-01-researcher-pc.png', title: 'Researcher on PC', description: 'A researcher is working on a PC and performing actions in a workflow-driven research setup.', location: 'Office 1.106', actors: ['Researcher – TBC'] }
@@ -13,10 +13,10 @@ const scene3Shots = [
 ];
 
 const raw = [
-  [1,'Research workflows in action',0,7,'Researchers can streamline their work by triggering actions directly from NOMAD Oasis and connecting their data to computational tasks.','A researcher performs actions on a PC while working through a research workflow.','Office 1.106',['Researcher – TBC'],'mixed'],
-  [2,'Automated workflows in Oasis',7,6,'With NOMAD Actions, researchers can trigger automated workflows directly in NOMAD Oasis, even when the computation runs on external resources.','Screen recording of NOMAD Actions for a research workflow.','Screen recording',['Screen only'],'screen'],
-  [3,'Connecting data to workflows',13,6,'We are developing this framework to connect research data with processing, simulation, and AI workflows, making complex tasks easier to automate and reproduce.','speaker-ilyas-camera.png','Office 1.106',['Ilyas'],'camera'],
-  [4,'Join the community',19,1,'For more information visit our website and join our community on Discord.','Ilyas speaks to camera with a focused research workflow context.','Office 1.106',['Ilyas'],'camera']
+[1,'Research workflows in action',0,5,'Research data often needs additional processing before it can provide new scientific insights.','A researcher performs actions on a PC while working through a research workflow.','Office 1.106',['Researcher – TBC'],'camera'],
+[2,'Automated workflows in Oasis',5,10,'With NOMAD Actions, researchers can trigger predefined workflows directly from their Oasis. They can be executed locally or sent to external computing resources.','Screen recording of NOMAD Actions for a research workflow.','Screen recording',['Screen only'],'screen'],
+[3,'Connecting data to workflows',15,9,'Action plugins provide a flexible framework for connecting research data with processing, simulation, and AI workflows, making complex tasks easier to automate and reproduce.','speaker-ilyas-camera.png','Office 1.106',['Ilyas'],'camera'],
+[4,'Join the community',24,4,'For more information visit our website and join us on Discord.','Ilyas speaks to camera with a focused research workflow context.','Office 1.106',['Ilyas'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));

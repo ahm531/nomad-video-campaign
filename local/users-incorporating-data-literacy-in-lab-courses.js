@@ -1,7 +1,6 @@
-const totalRuntime = 34;
+const totalRuntime = 19;
 const raw = [
-  [1,'Script pending',0,15,'The spoken script for this video is still to be confirmed.','Placeholder footage for C. T. Koch presentation or workshop setting.','TBC',['C. T. Koch – TBC'],'camera'],
-  [2,'Join the community',15,15,'For more information, visit our website and join our community on Discord.','Placeholder footage for C. T. Koch presentation or workshop setting.','TBC',['C. T. Koch – TBC'],'camera']
+[1,'Script pending',0,15,'The spoken script for this video is still to be confirmed.','Placeholder footage for C. T. Koch presentation or workshop setting.','TBC',['C. T. Koch – TBC'],'camera']
 ];
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
 let active=0,time=0,playing=false,timer=null;const $=id=>document.getElementById(id),fmt=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;

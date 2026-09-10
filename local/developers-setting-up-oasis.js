@@ -1,7 +1,24 @@
-const totalRuntime = 24;
+const totalRuntime = 34;
+
+const oasisSetupShots = {
+  1: [
+    { id: '1.1', image: '../public/Martin Deploying an Oasis.png', title: 'Deploying a NOMAD Oasis', description: 'Martin working at a computer while deploying a NOMAD Oasis.', location: 'Office / infrastructure setting – TBC', actors: ['Martin Kuban'] }
+  ],
+  2: [
+    { id: '2.1', image: '../public/Martin_speaking_to_camera.png', title: 'Martin speaks to camera', description: 'Martin explains the deployment guides and ready-to-use templates.', location: 'Office – TBC', actors: ['Martin Kuban'] },
+    { id: '2.2', image: '../public/Screen_Recording_Install - Documentation.png', title: 'Installation documentation', description: 'Screen recording navigating the NOMAD Oasis installation documentation and deployment configuration.', location: 'Screen recording', actors: ['Screen only'] }
+  ],
+  3: [
+    { id: '3.1', image: '../public/Screen-recording-Docker_Helm.png', title: 'Docker, Helm, and Kubernetes', description: 'Screen recording showing Docker deployment followed by Kubernetes and Helm configuration.', location: 'Screen recording', actors: ['Screen only'] },
+    { id: '3.2', image: '../public/Martin_speaking_to_camera.png', title: 'Martin speaks to camera', description: 'Martin explains reusable deployment solutions for different infrastructure needs.', location: 'Office – TBC', actors: ['Martin Kuban'] }
+  ]
+};
+
 const raw = [
-  [1,'Setting up an Oasis',0,8,'The statement for this video is still to be confirmed. Speaker and wording will be added when finalized.','Speaker to camera in an office or common room setting.','TBC',['Martin Kuban – TBC'],'camera'],
-  [2,'Join the community',8,12,'For more information, visit our website and join our community on Discord.','Speaker to camera in an office or common room setting.','TBC',['Martin Kuban – TBC'],'camera']
+[1,'Infrastructure that fits your group',0,6,'A NOMAD Oasis can run on infrastructure of different sizes depending on the needs of your research group.','Martin working at a computer while deploying a NOMAD Oasis.','Office / infrastructure setting – TBC',['Martin Kuban'],'camera'],
+[2,'Guides and deployment templates',6,10,'Our deployment guides and ready-to-use templates make it easy to get an Oasis up and running, while providing the information you need to tailor it to your institution’s infrastructure.','Split-screen: Martin speaking to camera on the left and the installation documentation screen recording on the right.','Office – TBC / Screen recording',['Martin Kuban'],'mixed'],
+[3,'From one server to larger-scale deployments',16,10,'Whether you are deploying with Docker on a single server or using Helm and Kubernetes at larger scale, NOMAD provides reusable solutions for different infrastructure needs.','Split-screen: Docker, Helm, and Kubernetes screen recording on the left and Martin speaking to camera on the right.','Screen recording / Office – TBC',['Martin Kuban'],'mixed'],
+[4,'Join the community',26,4,'For more information, visit our website and join us on Discord.','Martin speaks to camera.','Office – TBC',['Martin Kuban'],'camera']
 ];
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
 let active=0,time=0,playing=false,timer=null;const $=id=>document.getElementById(id),fmt=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;

@@ -1,18 +1,18 @@
-const totalRuntime = 24;
+const totalRuntime = 35;
 
 const scene1Shots = [
   { id: '1.1', image: '../public/developers-search-apps-scene-01-workspace.png', title: 'Catalysis research workspace', description: 'Julia works in a research workspace with catalysis data and analysis tools open on the screen.', location: 'Room 1.106', actors: ['Julia Schumann'] }
 ];
 
 const scene2Shots = [
-  { id: '2.1', image: '../public/speaker-julia-schumann-camera.png', title: 'Julia speaks to camera', description: 'Julia speaks to camera with the screen behind her while the catalysis search app is active.', location: 'Room 1.106', actors: ['Julia Schumann'] },
-  { id: '2.2', image: '../public/developers-search-apps-scene-02-catalysis-app.png', title: 'Catalysis search app', description: 'Screen recording of a catalysis search app in NOMAD.', location: 'Screen recording', actors: ['Screen only'] }
+  { id: '2.1', image: '../public/speaker-julia-schumann-camera.png', title: 'Julia speaks to camera', description: 'Julia speaks in front of the camera with the big screen behind her showing a nice representation of the catalysis app.', location: 'Room 1.108', actors: ['Julia'] },
+  { id: '2.2', image: '../public/developers-search-apps-scene-02-catalysis-app.png', title: 'Catalysis search app', description: 'Screen recording of the Catalysis app.', location: 'Screen recording', actors: ['Julia'] }
 ];
 
 const raw = [
-  [1,'Catalysis search apps',0,7,'Researchers can explore millions of entries of materials data in NOMAD and use domain-specific search apps to find and filter the data they need.','Julia works in a catalysis research workspace with the relevant analysis tools open.','Room 1.106',['Julia Schumann'],'mixed'],
-  [2,'Tailored search apps',7,8,'For specific research domains, we develop tailored search apps that bring together and visualize curated datasets, for example, for catalysis and other materials-science workflows.','Julia speaks to camera with the screen behind her while a catalysis search app is shown beside her.','Room 1.106',['Julia Schumann'],'mixed'],
-  [3,'Join the community',15,5,'For more information visit our website and join our community on Discord.','Julia speaks to camera with the screen behind her.','Room 1.106',['Julia Schumann'],'camera']
+[1,'Catalysis search apps',0,9,'NOMAD Central lets researchers explore millions of data entries, with powerful search and filtering across materials, properties and methods.','Julia works in a catalysis research workspace with the relevant analysis tools open.','Room 1.106',['Julia Schumann'],'camera'],
+  [2,'Tailored search apps',9,18,'For specific domains, including solar cells and heterogeneous catalysis, we have curated thousands of data entries and developed tailored search apps to make this data accessible through domain-specific dashboards—for example, for filtering catalysts by reaction conditions, conversion, or selectivity.','Julia speaks in front of the camera with the big screen behind her showing a nice representation of the catalysis app.','Room 1.108',['Julia'],'mixed'],
+  [3,'Join the community',27,4,'For more information visit our website and join us on Discord.','Julia speaks to camera with the screen behind her.','Room 1.106',['Julia Schumann'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));

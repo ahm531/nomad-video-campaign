@@ -76,4 +76,19 @@ async function initializeCatalog(){
   }
 }
 
-initializeCatalog();
+async function initializeHomepageMetadata(){
+  const cards=[...document.querySelectorAll('.video-card')];
+  await Promise.all(VIDEO_CATALOG.map(async(video,index)=>{
+    const source=await fetch(`./${video.script}`,{cache:'no-store'}).then(response=>response.text());
+    const total=Number(source.match(/const\s+totalRuntime\s*=\s*(\d+)/)?.[1]);
+    const rawMatch=source.match(/const\s+raw\s*=\s*(\[[\s\S]*?\]);[\s\S]*?const\s+scenes/);
+    if(!cards[index]||!total||!rawMatch)return;
+    const sceneCount=Function(`"use strict";return (${rawMatch[1]})`)().length+1;
+    const metadata=cards[index].querySelectorAll('.video-meta span');
+    metadata[0].textContent=`${sceneCount} scenes`;
+    metadata[1].textContent=`${String(Math.floor(total/60)).padStart(2,'0')}:${String(total%60).padStart(2,'0')}`;
+  }));
+}
+
+if(document.getElementById('catalogRows'))initializeCatalog();
+if(document.querySelector('.video-grid'))initializeHomepageMetadata();

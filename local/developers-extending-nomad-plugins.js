@@ -1,22 +1,23 @@
-const totalRuntime = 24;
+const totalRuntime = 36;
 
 const scene1Shots = [
   { id: '1.1', image: '../public/central-scene-02-shot-01-lab-instruments.png', title: 'Oasis scene 1', description: 'A research workflow scene showing NOMAD Oasis in use.', location: 'Research environment', actors: ['Researchers – TBC'] }
 ];
 
 const scene2Shots = [
-  { id: '2.1', image: '../public/oasis-scene-08-plugin-registry.png', title: 'Plugin page / workflow', description: 'A screen recording showing NOMAD plugin and workflow functionality.', location: 'Screen recording', actors: ['Screen only'] }
+  { id: '2.1', image: '../public/speaker-hampus-naesstroem-camera.png', title: 'Hampus speaks to camera', description: 'Hampus speaks to camera while explaining how plugins can extend and customize NOMAD Oasis.', location: 'Office 1.106', actors: ['Hampus Näsström'] }
 ];
 
 const scene3Shots = [
-  { id: '3.1', image: '../public/speaker-hampus-naesstroem-camera.png', title: 'Hampus speaks to camera', description: 'Hampus speaks to camera while explaining how plugins can extend NOMAD workflows.', location: 'Office 1.106', actors: ['Hampus Näsström'] }
+  { id: '3.1', image: '../public/speaker-hampus-naesstroem-camera.png', title: 'Hampus speaks to camera', description: 'Hampus speaks to camera while explaining how plugins can extend NOMAD workflows.', location: 'Office 1.106', actors: ['Hampus Näsström'] },
+  { id: '3.2', image: '../public/oasis-scene-08-plugin-registry.png', title: 'Plugin page / workflow', description: 'Screen recording showing NOMAD plugin and workflow functionality.', location: 'Screen recording', actors: ['Screen only'] }
 ];
 
 const raw = [
-  [1,'Different data and workflows',0,6,'Researchers have very different data and workflows — a rigid platform cannot cover every use case.','oasis-scene-10-team-discussion.png','Research environment',['Researchers – TBC'],'mixed'],
-  [2,'Customize your Oasis',6,5,'NOMAD plugins let users extend and customize their Oasis.','oasis-scene-08-plugin-registry.png','Screen recording',['Screen only'],'screen'],
-  [3,'Build, reuse, and learn faster',11,7,'You can build your own plugins or reuse plugins developed by others. We provide templates that make it easier to get started, so you don’t always have to start from scratch.','speaker-hampus-naesstroem-camera.png','Office 1.106',['Hampus Näsström'],'camera'],
-  [4,'Join the community',18,2,'For more information, visit our website and join our community on Discord.','speaker-hampus-naesstroem-camera.png','Office 1.106',['Hampus Näsström'],'camera']
+[1,'Different data and workflows',0,7,'Research data and workflows vary widely across research groups. A rigid platform cannot cover every use case.','oasis-scene-10-team-discussion.png','Research environment',['Researchers – TBC'],'mixed'],
+[2,'Customize your Oasis',7,9,'NOMAD plugins let users extend and customize their Oasis, with new data models, parsing tools, dashboards, and automated workflows.','Hampus speaks to camera.','Office 1.106',['Hampus Näsström'],'camera'],
+[3,'Build, reuse, and learn faster',16,12,'You can build your own plugins using our templates, or reuse plugins developed by others. The growing NOMAD ecosystem already has hundreds of plugins to assist in supporting your research data management.','Split-screen: Hampus speaking to camera on the left and the plugin page screen recording on the right.','Office 1.106 / Screen recording',['Hampus Näsström'],'mixed'],
+[4,'Join the community',28,4,'For more information visit our website and join us on Discord.','speaker-hampus-naesstroem-camera.png','Office 1.106',['Hampus Näsström'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));

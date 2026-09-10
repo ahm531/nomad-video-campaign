@@ -1,18 +1,18 @@
-const totalRuntime = 24;
+const totalRuntime = 29;
 
 const scene1Shots = [
   { id: '1.1', image: '../public/developers-nomad-scene-01-team-meeting.png', title: 'Developers in a meeting', description: 'Lauri Himanen discusses with developers in a meeting, with code visible on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen', 'Developers – TBC'] }
 ];
 
 const scene2Shots = [
-  { id: '2.1', image: '../public/speaker-lauri-himanen-camera.png', title: 'Lauri speaks to camera', description: 'Lauri speaks to camera with NOMAD performance and metrics shown on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen'] },
-  { id: '2.2', image: '../public/developers-nomad-scene-02-coding-workspace.png', title: 'Developer coding', description: 'Developer sitting at a desk working on some coding activity.', location: 'Room 1.108', actors: ['Developer – TBC'] }
+  { id: '2.1', image: '../public/speaker-lauri-himanen-camera.png', title: 'Lauri speaks to camera', description: 'Lauri speaks to camera with NOMAD performance and metrics shown on the screen.', location: 'Office 1.108', actors: ['Lauri Himanen'] },
+  { id: '2.2', image: '../public/developers-nomad-scene-02-coding-workspace.png', title: 'Developer coding', description: 'Ahmed I sits at a desk working on a coding activity.', location: 'Office 1.106', actors: ['Ahmed I'] }
 ];
 
 const raw = [
-  [1,'Building the NOMAD ecosystem',0,6,'NOMAD brings together increasingly diverse types of data, workflows, and scientific communities.','Lauri Himanen discusses with developers in a meeting, with code visible on the screen.','Room 1.108',['Lauri Himanen','Developers – TBC'],'camera'],
-  [2,'Managing complexity behind NOMAD',6,9,'Our job as the core development team is to manage the complexity behind it, making sure NOMAD remains stable, secure, and reliable so researchers can focus on their science.','Lauri speaks to camera with NOMAD performance and metrics shown on the screen, while a developer works on code in parallel.','Room 1.108',['Lauri Himanen','Developer – TBC'],'mixed'],
-  [3,'Join the community',15,5,'For more information, visit our website and join our community on Discord.','Lauri Himanen speaks to camera as the final framing settles into the screen.','Room 1.108',['Lauri Himanen'],'camera']
+  [1,'Building the NOMAD ecosystem',0,6,'NOMAD brings together diverse research data, workflows, and scientific communities.','Lauri Himanen discusses with developers in a meeting, with code visible on the screen.','Room 1.108',['Lauri Himanen','Developers – TBC'],'camera'],
+  [2,'Managing complexity behind NOMAD',6,15,'Our job as the development team is to manage the complexity behind the platform, making sure it remains stable, secure, and reliable so researchers can focus on the science.','Lauri speaks to camera with NOMAD performance and metrics shown on the screen, while Ahmed I works on code in parallel.','Office 1.108; Office 1.106',['Lauri Himanen','Ahmed I'],'camera'],
+  [3,'Join the community',21,4,'For more information visit our website and join us on Discord.','Lauri Himanen speaks to camera as the final framing settles into the screen.','Room 1.108',['Lauri Himanen'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
@@ -118,6 +118,20 @@ function render() {
       </figure>
     `).join('');
     $('standard-footage').hidden = true;
+    $('scene1-shot-list').hidden = false;
+    $('scene1-shot-list').innerHTML = scene2Shots.map((shot) => `
+      <article class="shot-detail">
+        <div class="shot-detail-number">${shot.id}</div>
+        <div>
+          <strong>${shot.title}</strong>
+          <p>${shot.description}</p>
+          <dl>
+            <div><dt>LOCATION</dt><dd>${shot.location}</dd></div>
+            <div><dt>ACTORS</dt><dd>${shot.actors.join(', ')}</dd></div>
+          </dl>
+        </div>
+      </article>
+    `).join('');
   }
 
   if (isSceneThree) {

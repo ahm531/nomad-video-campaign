@@ -1,8 +1,8 @@
-const totalRuntime = 24;
+const totalRuntime = 34;
 const raw = [
-  [1,'Long-term data preservation',0,7,'When researchers publish their data, they need to trust that it will remain available for years to come. Research data uploaded to NOMAD is stored at the Max Planck Computing and Data Facility in Germany.','MPCDF footage or a data-center style visual.','MPCDF, Germany',['Research data storage – TBC'],'mixed'],
-  [2,'Regular backups and long-term preservation',7,8,'With regular backups and a commitment to preserve data for at least ten years, we make sure their research is preserved for the future.','Raphael Ritz speaks to camera.','Office 1.108',['Raphael Ritz'],'camera'],
-  [3,'Join the community',15,5,'For more information visit our website and join our community on Discord.','Raphael Ritz speaks to camera.','Office 1.108',['Raphael Ritz'],'camera']
+[1,'Long-term data preservation',0,14,'When researchers publish their data, they need to trust that it will remain available for years to come. Research data uploaded to NOMAD is stored at the Max Planck Computing and Data Facility in Germany.','MPCDF footage or a data-center style visual.','MPCDF, Germany',['Research data storage – TBC'],'mixed'],
+[2,'Regular backups and long-term preservation',14,12,'With regular backups and a commitment to preserve data for at least ten years, we make sure their research is preserved for the future.','Raphael Ritz speaks to camera.','Office 1.108',['Raphael Ritz'],'camera'],
+[3,'Join the community',26,4,'For more information visit our website and join us on Discord.','Raphael Ritz speaks to camera.','Office 1.108',['Raphael Ritz'],'camera']
 ];
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
 let active=0,time=0,playing=false,timer=null;const $=id=>document.getElementById(id),fmt=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;

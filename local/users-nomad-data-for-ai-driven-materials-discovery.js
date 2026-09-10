@@ -1,7 +1,7 @@
 const totalRuntime = 24;
 const raw = [
-  [1,'Training models on materials data',0,10,'We used data from NOMAD to develop CrystaLLM, a language model that learns from existing crystal structures and generates new ones.','Keith Butler speaks to camera on Zoom.','Zoom',['Keith Butler'],'camera'],
-  [2,'Large reusable datasets for AI',10,10,'NOMAD provides access to a large collection of reusable materials data that we can use for training, enabling us to explore new approaches to materials discovery.','Keith on full section, and an animated schematic next to him showing NOMAD and CrystalLLM','Screen recording',['Screen only'],'screen']
+  [1,'Training models on materials data',0,10,'My group developed CrystaLLM, a language model for generating plausible structures for new compounds. Training an accurate model required millions of compatible crystal structures.','Keith Butler speaks to camera on Zoom.','Zoom',['Keith Butler'],'camera'],
+  [2,'Large reusable datasets for AI',10,10,'NOMAD Central provided a large portion of the training data, with detailed and structured metadata to help us curate a high-quality training set.','Keith on full section, and an animated schematic next to him showing NOMAD and CrystalLLM','Screen recording',['Screen only'],'screen']
 ];
 const sceneImageMap = {
   1: { src: '../public/speaker-keith-butler-remote.png', alt: 'Keith Butler speaking to camera on Zoom' },
