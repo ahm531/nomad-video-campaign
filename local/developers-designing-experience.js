@@ -1,7 +1,7 @@
 const totalRuntime = 26;
 
 const scene1Shots = [
-  { id: '1.1', image: '../public/developers-experience-scene-01-team-meeting.png', title: 'Collaborative materials science meeting', description: 'Berfin Güner discusses with a scientist in a meeting room while NOMAD is visible on a laptop screen.', location: 'Room 1.108', actors: ['Berfin Güner', 'Scientist – TBC'] }
+  { id: '1.1', image: '../public/developers-experience-scene-01-team-meeting.png', title: 'Collaborative meeting on the NOMAD GUI', description: 'Berfin Güner discusses with a scientist in a meeting room while NOMAD is visible on a laptop screen.', location: 'Room 1.108', actors: ['Berfin Güner', 'Simon'] }
 ];
 
 const scene2Shots = [
@@ -10,7 +10,7 @@ const scene2Shots = [
 ];
 
 const raw = [
-  [1,'User experience matters',0,8,'NOMAD offers many features for managing scientific data. These need to be intuitive for researchers to find and use.','Berfin Güner discusses with a scientist in a meeting room; NOMAD is visible on a laptop screen.','Room 1.108',['Berfin Güner','Scientist – TBC'],'camera'],
+  [1,'User experience matters',0,8,'NOMAD offers many features for managing scientific data. These need to be intuitive for researchers to find and use.','Berfin Güner discusses with a scientist in a meeting room; NOMAD is visible on a laptop screen.','Room 1.108',['Berfin Güner','Simon'],'camera'],
   [2,'Listening closely to researchers',8,10,'I work closely with researchers to understand how they use NOMAD and turn their feedback into a user experience that makes their everyday work easier.','Berfin speaks to camera with the screen behind her; NOMAD in action, while the UI work is shown beside it.','Room 1.108',['Berfin Güner'],'camera'],
   [3,'Join the community',18,4,'For more information visit our website and join us on Discord.','Berfin speaks to camera with the screen behind her; NOMAD in action.','Room 1.108',['Berfin Güner'],'camera']
 ];

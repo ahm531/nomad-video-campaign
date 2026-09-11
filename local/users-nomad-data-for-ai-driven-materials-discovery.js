@@ -1,6 +1,6 @@
 const totalRuntime = 24;
 const raw = [
-  [1,'Training models on materials data',0,10,'My group developed CrystaLLM, a language model for generating plausible structures for new compounds. Training an accurate model required millions of compatible crystal structures.','Keith Butler speaks to camera on Zoom.','Zoom',['Keith Butler'],'camera'],
+  [1,'Training models on materials data',0,10,'My group developed CrystaLLM, a language model for generating plausible structures for new compounds. Training an accurate model required millions of compatible crystal structures.','Keith Butler speaks to camera on Zoom.','Zoom',['Keith Butler', 'Natalia'],'camera'],
   [2,'Large reusable datasets for AI',10,10,'NOMAD Central provided a large portion of the training data, with detailed and structured metadata to help us curate a high-quality training set.','Keith on full section, and an animated schematic next to him showing NOMAD and CrystalLLM','Screen recording',['Screen only'],'screen']
 ];
 const sceneImageMap = {

@@ -1,7 +1,7 @@
 const totalRuntime = 24;
 const raw = [
-[1,'Connecting data across the workflow',0,10,'In our lab, we need to keep track of how each thin-film sample was produced, including the target materials, process conditions, and resulting data.','Lena Mittmann working in the lab and then speaking to camera; footage from her lab or Zoom.','Zoom / UM video / lab footage',['Lena Mittmann'],'mixed'],
-[2,'Tracing each sample from synthesis to characterization',10,10,'We use NOMAD Oasis to connect these pieces automatically as part of the experimental workflow. This gives us the complete sample history and makes previous experiments easy to trace and compare.','Screen recording of Lena’s Oasis workflow, showing samples, experiments, and data linkage.','Screen recording / screen capture',['Lena Mittmann','Hampus Näsström – TBC'],'screen']
+[1,'Connecting data across the workflow',0,10,'In our lab, we need to keep track of how each thin-film sample was produced, including the target materials, process conditions, and resulting data.','Lena Mittmann working in the lab and then speaking to camera; footage from her lab or Zoom.','Zoom / UM video / lab footage',['Lena Mittmann', 'Ahmed M'],'mixed'],
+[2,'Tracing each sample from synthesis to characterization',10,10,'We use NOMAD Oasis to connect these pieces automatically as part of the experimental workflow. This gives us the complete sample history and makes previous experiments easy to trace and compare.','Creat an anmimation of Lena’s Oasis workflow, showing samples, experiments, and data linkage.','Zoom',['Lena Mittmann',],'screen']
 ];
 const sceneImageMap = {
   1: { src: '../public/speaker-lena-mittmann-remote.png', alt: 'Lena Mittmann speaking on Zoom' },

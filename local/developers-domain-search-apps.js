@@ -5,13 +5,13 @@ const scene1Shots = [
 ];
 
 const scene2Shots = [
-  { id: '2.1', image: '../public/speaker-julia-schumann-camera.png', title: 'Julia speaks to camera', description: 'Julia speaks in front of the camera with the big screen behind her showing a nice representation of the catalysis app.', location: 'Room 1.108', actors: ['Julia'] },
-  { id: '2.2', image: '../public/developers-search-apps-scene-02-catalysis-app.png', title: 'Catalysis search app', description: 'Screen recording of the Catalysis app.', location: 'Screen recording', actors: ['Julia'] }
+  { id: '2.1', image: '../public/speaker-julia-schumann-camera.png', title: 'Julia speaks to camera', description: 'Julia speaks to camera with the screen behind her while the catalysis search app is active.', location: 'Room 1.106', actors: ['Julia Schumann'] },
+  { id: '2.2', image: '../public/developers-search-apps-scene-02-catalysis-app.png', title: 'Catalysis search app', description: 'Screen recording of a catalysis search app in NOMAD.', location: 'Screen recording', actors: ['Screen only'] }
 ];
 
 const raw = [
-[1,'Catalysis search apps',0,9,'NOMAD Central lets researchers explore millions of data entries, with powerful search and filtering across materials, properties and methods.','Julia works in a catalysis research workspace with the relevant analysis tools open.','Room 1.106',['Julia Schumann'],'camera'],
-  [2,'Tailored search apps',9,18,'For specific domains, including solar cells and heterogeneous catalysis, we have curated thousands of data entries and developed tailored search apps to make this data accessible through domain-specific dashboards—for example, for filtering catalysts by reaction conditions, conversion, or selectivity.','Julia speaks in front of the camera with the big screen behind her showing a nice representation of the catalysis app.','Room 1.108',['Julia'],'mixed'],
+[1,'Catalysis search apps',0,9,'NOMAD Central lets researchers explore millions of materials data entries, with powerful search and filtering across materials, properties and methods.','Julia works in a catalysis research workspace with the relevant analysis tools open.','Room 1.106',['Julia Schumann'],'camera'],
+  [2,'Tailored search apps',9,18,'For specific domains, including solar cells and heterogeneous catalysis, we have curated thousands of data entries and developed tailored search apps to make this data accessible through domain-specific dashboards—for example, for filtering catalysts by reaction conditions, conversion, or selectivity.','Julia speaks to camera with the screen behind her while a catalysis search app is shown beside her.','Room 1.106',['Julia Schumann'],'mixed'],
   [3,'Join the community',27,4,'For more information visit our website and join us on Discord.','Julia speaks to camera with the screen behind her.','Room 1.106',['Julia Schumann'],'camera']
 ];
 

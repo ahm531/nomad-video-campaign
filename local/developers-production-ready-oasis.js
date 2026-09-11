@@ -2,7 +2,7 @@ const totalRuntime = 36;
 
 const productionReadyShots = {
   1: [
-    { id: '1.1', image: '../public/oasis-scene-10-team-discussion.png', title: 'Research infrastructure discussion', description: 'Researchers discuss how NOMAD Oasis supports research data infrastructure across groups, institutions, and collaborative networks.', location: 'Room 1.108', actors: ['Researchers – TBC'] }
+    { id: '1.1', image: '../public/oasis-scene-10-team-discussion.png', title: 'Research infrastructure discussion', description: 'Researchers discuss how NOMAD Oasis supports research data infrastructure across groups, institutions, and collaborative networks.', location: 'Room 1.108', actors: ['Joe, Simon, Nathan, Cecilia, Natalia'] }
   ],
   2: [
     { id: '2.1', image: '../public/Joe_speaks_to_camera.png', title: 'Joe speaks to camera', description: 'Joe explains how multiple Oases can form a federated data infrastructure.', location: 'TBD', actors: ['Joseph Rudzinski'] }

@@ -1,7 +1,7 @@
 const totalRuntime = 36;
 
 const scene1Shots = [
-  { id: '1.1', image: '../public/central-scene-02-shot-01-lab-instruments.png', title: 'Oasis scene 1', description: 'A research workflow scene showing NOMAD Oasis in use.', location: 'Research environment', actors: ['Researchers – TBC'] }
+  { id: '1.1', image: '../public/central-scene-02-shot-01-lab-instruments.png', title: 'Divers data and workflows', description: 'Cuts of multple instruments with people working in a research environment. From V02-S01-F01 get closup shots.', location: 'CSMB Labs', actors: ['Similar to V02-S01-F01'] }
 ];
 
 const scene2Shots = [

@@ -23,6 +23,54 @@ const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;'
 const typeLabel=type=>({camera:'Camera footage',screen:'Screen recording',mixed:'Mixed media'}[type]||type);
 const formatDuration=seconds=>`${seconds} sec`;
 
+function extractAssignedExpression(source,name){
+  const marker=new RegExp(`const\\s+${name}\\s*=\\s*`).exec(source);
+  if(!marker)return null;
+  const start=marker.index+marker[0].length;
+  const opener=source[start];
+  const closer=opener==='['?']':opener==='{'?'}':null;
+  if(!closer)return null;
+  let depth=0,quote=null,escaped=false;
+  for(let index=start;index<source.length;index++){
+    const char=source[index];
+    if(quote){
+      if(escaped){escaped=false;continue;}
+      if(char==='\\'){escaped=true;continue;}
+      if(char===quote)quote=null;
+      continue;
+    }
+    if(char==='"'||char==="'"||char==='`'){quote=char;continue;}
+    if(char===opener)depth++;
+    if(char===closer&&--depth===0)return source.slice(start,index+1);
+  }
+  return null;
+}
+
+function loadShotGroups(source){
+  const groups={};
+  const names=[...source.matchAll(/const\s+([A-Za-z][A-Za-z0-9]*Shots)\s*=/g)].map(match=>match[1]);
+  names.forEach(name=>{
+    const expression=extractAssignedExpression(source,name);
+    if(!expression)return;
+    const value=Function(`"use strict";return (${expression})`)();
+    const sceneMatch=name.match(/^scene(\d+)Shots$/);
+    if(sceneMatch&&Array.isArray(value))groups[Number(sceneMatch[1])]=value;
+    else if(value&&typeof value==='object'&&!Array.isArray(value))Object.entries(value).forEach(([sceneId,shots])=>{if(Array.isArray(shots))groups[Number(sceneId)]=shots;});
+  });
+  return groups;
+}
+
+function inferShotType(shot,fallback){
+  if(shot.type)return shot.type;
+  const context=[shot.title,shot.description,shot.location,Array.isArray(shot.actors)?shot.actors.join(' '):shot.actors].join(' ').toLowerCase();
+  if(/screen recording|screen only|graphic|no speaker/.test(context))return 'screen';
+  return fallback==='screen'?'screen':'camera';
+}
+
+function formatFootageId(videoNumber,sceneId,footageNumber){
+  return `V${videoNumber}-S${String(sceneId).padStart(2,'0')}-F${String(footageNumber).padStart(2,'0')}`;
+}
+
 async function loadCatalog(){
   const videos=await Promise.all(VIDEO_CATALOG.map(async video=>{
     const source=await fetch(`./${video.script}`,{cache:'no-store'}).then(response=>{
@@ -32,11 +80,26 @@ async function loadCatalog(){
     const match=source.match(/const\s+raw\s*=\s*(\[[\s\S]*?\]);[\s\S]*?const\s+scenes/);
     if(!match) throw new Error(`Scene data not found in ${video.script}`);
     const rows=Function(`"use strict";return (${match[1]})`)();
-    return rows.map(([id,title,start,duration,sentence,footage,location,actors,type])=>({
-      ...video,id,title,start,duration,sentence,footage,location,
-      actors:Array.isArray(actors)?actors.join(', '):actors,type,
-      footageId:`V${video.number}-F${String(id).padStart(2,'0')}`
-    }));
+    const shotGroups=loadShotGroups(source);
+    return rows.flatMap(([id,title,start,duration,sentence,footage,location,actors,type])=>{
+      const shots=shotGroups[id];
+      if(!shots?.length)return [{
+        ...video,id,title,start,duration,sentence,footage,location,
+        actors:Array.isArray(actors)?actors.join(', '):actors,type,
+        footageId:formatFootageId(video.number,id,1)
+      }];
+      return shots.map((shot,index)=>{
+        const shotNumber=Number(String(shot.id??'').split('.').pop())||index+1;
+        return {
+          ...video,id,title:`${title} · ${shot.title||`Footage ${shotNumber}`}`,start,duration,sentence,
+          footage:shot.description||footage,
+          location:shot.location||location,
+          actors:Array.isArray(shot.actors)?shot.actors.join(', '):(shot.actors||actors),
+          type:inferShotType(shot,type),
+          footageId:formatFootageId(video.number,id,shotNumber)
+        };
+      });
+    });
   }));
   return videos.flat();
 }

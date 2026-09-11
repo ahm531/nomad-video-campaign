@@ -1,14 +1,14 @@
 const totalRuntime=120;
 const scene1Shots=[
-{ id:'1.1', image:'../public/oasis-scene-01-lab-team.png', title:'Inside the lab', description:'Wide shot of multiple researchers working on different tasks in the lab.', location:'CSMB lab', actors:['4–5 researchers – TBC'] }
+{ id:'1.1', image:'../public/oasis-scene-01-lab-team.png', title:'Inside the lab', description:'Wide shot of multiple researchers working on different tasks in the lab.', location:'CSMB Joint lab', actors:['5 researchers: Lennart Frohloff, CSMB person (TBC), Julian , Dea, Sarthak'] }
 ];
 const scene2Shots=[
-{ id:'2.1', image:'../public/oasis-scene-02-shot-01-instrument-software.png', title:'Instrument control and results', description:'A researcher uses instrument-control software and visualizes the obtained results at the XPS system computer.', location:'CSMB lab, XPS system computer', actors:['Researcher – TBC'] },
-{ id:'2.2', image:'../public/oasis-scene-02-shot-02-data-analysis.png', title:'Analysis in the office', description:'A researcher uses plotting and analysis software in the office to inspect and compare experimental data.', location:'Office 1.106', actors:['Siamak'] },
-{ id:'2.3', image:'../public/oasis-scene-02-shot-03-parameter-recording.png', title:'Recording parameters', description:'A scientist stands in front of a rack and records parameters on a tablet in hand.', location:'CSMB lab', actors:['Scientist – TBC'] }
+{ id:'2.1', image:'../public/oasis-scene-02-shot-01-instrument-software.png', title:'Instrument control and results', description:'A researcher uses instrument-control software and visualizes the obtained results at the XPS system computer.', location:'CSMB Joint lab', actors:['Lennart Frohloff'] },
+{ id:'2.2', image:'../public/oasis-scene-02-shot-02-data-analysis.png', title:'Analysis in the office', description:'A researcher uses plotting and analysis software in the office to inspect and compare experimental data.', location:'Office 1.106', actors:['Sarthak'] },
+{ id:'2.3', image:'../public/oasis-scene-02-shot-03-parameter-recording.png', title:'Recording parameters', description:'A scientist stands in front of a rack and records parameters on a tablet in hand.', location:'CSMB Jointlab', actors:['Cecilia'] }
 ];
 const scene3Shots=[
-{ id:'3.1', image:'../public/oasis-scene-03-shot-01-dataset-discussion.png', title:'Shared dataset discussion', description:'Two researchers look at a dataset on a computer and discuss it together.', location:'Office 1.106', actors:['Siamak + 1 researcher'] },
+{ id:'3.1', image:'../public/oasis-scene-03-shot-01-dataset-discussion.png', title:'Shared dataset discussion', description:'Two researchers look at a dataset on a computer and discuss it together.', location:'Office 1.106', actors:['Sarthak + Cecilia'] },
 { id:'3.2', image:'../public/oasis-scene-03-shot-02-remote-meeting.png', title:'Remote meeting with shared scientific dataset', description:'A remote meeting with a shared scientific dataset visible on screen.', location:'Office 1.106', actors:['Pre-recorded Zoom participants – AM'] }
 ];
 const scene6Shots=[
@@ -25,12 +25,12 @@ const scene9Shots=[
 { id:'9.2', image:'../public/oasis-scene-09-published-data.png', title:'Published data in NOMAD', description:'Screen recording of transferring data from an Oasis instance to NOMAD and making it visible in the public repository.', location:'NOMAD public data view', actors:['Screen only'] }
 ];
 const scene10Shots=[
-{ id:'10.1', image:'../public/oasis-scene-10-team-discussion.png', title:'Results discussion', description:'Christoph Koch discussing with a team of scientists, with NOMAD Oasis on the screen.', location:'Room 1.108', actors:['Christoph Koch','others'] }
+{ id:'10.1', image:'../public/oasis-scene-10-team-discussion.png', title:'Results discussion', description:'Researcher discussing with a team of scientists, with NOMAD Oasis on the screen.', location:'Room 1.108', actors:['Ahmed Mansour','Cecilia', 'Sarthak', 'Dea', 'Julian'] }
 ];
 
 const raw=[
-[1,'Everyday laboratory data',0,11,'Your laboratory produces valuable data every day—from synthesis records and measurement outputs to simulations and data analysis. But keeping it organized and accessible across the research group can be challenging.','Wide laboratory activity with multiple researchers working on different tasks; a small meeting-room discussion around a screen.','CSMB lab; room 1.108',['4–5 researchers – TBC','3–4 researchers'],'camera'],
-[2,'Data and knowledge become scattered',11,12,'Data may be distributed across instrument computers, individual workstations, lab notebooks, and different software. When researchers leave, their data can become difficult to find and understand.','Quick instrument cuts; instrument-control and results software; plotting and analysis software; computational scientist in a terminal.','CSMB lab; XPS computer; office 1.106; office on Claudia’s floor',['Siamak','Martin Kuban','Joe'],'mixed'],
+[1,'Everyday laboratory data',0,11,'Your laboratory produces valuable data every day—from synthesis records and measurement outputs to simulations and data analysis. But keeping it organized and accessible across the research group can be challenging.','Wide laboratory activity with multiple researchers working on different tasks.','CSMB Joint lab; room 1.108',['5 researchers – TBC','3–4 researchers'],'camera'],
+[2,'Data and knowledge become scattered',11,12,'Data may be distributed across instrument computers, individual workstations, lab notebooks, and different software. When researchers leave, their data can become difficult to find and understand.','Quick instrument cuts; instrument-control and results software; plotting and analysis software; computational scientist in a terminal.','CSMB Joint lab; XPS computer; office 1.106; office on Claudia’s floor',['Siamak','Martin Kuban','Joe'],'mixed'],
 [3,'A shared platform without disruption',23,10,'You need a platform where your research group can organize data and preserve its scientific context, making previous results easy to find and understand.','Two researchers discuss a dataset; cut to a remote meeting with a shared scientific dataset.','Office 1.106',['Siamak + 1 researcher','Pre-recorded Zoom participants – AM'],'mixed'],
 [4,'Control storage and access',33,8,'You need a platform that fits into the way researchers already work, while giving you control over where your data is stored and who can access it.','Christoph Koch speaks directly to camera with the screen visible behind him.','CSMB Foyer',['Christoph Koch'],'camera'],
 [5,'Your own NOMAD Oasis',41,9,'That’s exactly what NOMAD Oasis gives you: your own research data management platform that can be adapted to your workflows and deployed on your infrastructure.','Christoph Koch continues to camera.','CSMB Foyer',['Christoph Koch'],'camera'],
