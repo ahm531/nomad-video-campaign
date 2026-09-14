@@ -1,7 +1,7 @@
 const totalRuntime = 32;
 
 const scene1Shots = [
-  { id: '1.1', image: '../public/developers-workflows-scene-01-researcher-pc.png', title: 'Researcher on PC', description: 'A researcher is working on a PC and performing actions in a workflow-driven research setup.', location: 'Office 1.106', actors: ['Ahmed I.'] }
+  { id: '1.1', image: '../public/developers-workflows-scene-01-researcher-pc.png', title: 'Researcher on PC', description: 'A researcher is working on a PC and performing actions in a workflow-driven research setup.', location: 'common room', actors: ['Ahmed I.'] }
 ];
 
 const scene2Shots = [

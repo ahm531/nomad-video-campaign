@@ -1,16 +1,16 @@
 const totalRuntime = 29;
 
 const scene1Shots = [
-  { id: '1.1', image: '../public/developers-nomad-scene-01-team-meeting.png', title: 'Developers in a meeting', description: 'Lauri Himanen discusses with developers in a meeting, with code visible on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen', 'Ahmed I', 'Amir'],}
+  { id: '1.1', image: '../public/developers-nomad-scene-01-team-meeting.png', title: 'Developers in a meeting', description: 'Lauri Himanen discusses with developers in a meeting, with code visible on the screen.', location: 'Room 1.108', actors: ['Lauri Himanen', 'Sascha', 'Amir', 'Thea'],}
 ];
 
 const scene2Shots = [
   { id: '2.1', image: '../public/speaker-lauri-himanen-camera.png', title: 'Lauri speaks to camera', description: 'Lauri speaks to camera with NOMAD performance and metrics shown on the screen.', location: 'Office 1.108', actors: ['Lauri Himanen'] },
-  { id: '2.2', image: '../public/developers-nomad-scene-02-coding-workspace.png', title: 'Developer coding', description: 'Ahmed I sits at a desk working on a coding activity.', location: 'Office 1.106', actors: ['Ahmed I'] }
+  { id: '2.2', image: '../public/developers-nomad-scene-02-coding-workspace.png', title: 'Developer coding', description: 'Developer at a desk working on a coding activity.', location: 'Office 1.106', actors: ['Sascha'] }
 ];
 
 const raw = [
-  [1,'Building the NOMAD ecosystem',0,6,'NOMAD brings together diverse research data, workflows, and scientific communities.','Lauri Himanen discusses with developers in a meeting, with code visible on the screen.','Room 1.108',['Lauri Himanen', 'Ahmed I', 'Amir'],'camera'],
+  [1,'Building the NOMAD ecosystem',0,6,'NOMAD brings together diverse research data, workflows, and scientific communities.','Lauri Himanen discusses with developers in a meeting, with code visible on the screen.','Room 1.108',['Lauri Himanen', 'Sascha', 'Amir', 'Thea'],'camera'],
   [2,'Managing complexity behind NOMAD',6,15,'Our job as the development team is to manage the complexity behind the platform, making sure it remains stable, secure, and reliable so researchers can focus on the science.','Lauri speaks to camera with NOMAD performance and metrics shown on the screen, while Ahmed I works on code in parallel.','Office 1.108; Office 1.106',['Lauri Himanen','Ahmed I'],'camera'],
   [3,'Join the community',21,4,'For more information visit our website and join us on Discord.','Lauri Himanen speaks to camera as the final framing settles into the screen.','Room 1.108',['Lauri Himanen'],'camera']
 ];

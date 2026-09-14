@@ -5,7 +5,7 @@ const scene1Shots = [
 ];
 
 const scene2Shots = [
-  { id: '2.1', image: '../public/speaker-hampus-naesstroem-camera.png', title: 'Hampus speaks to camera', description: 'Hampus speaks to camera while explaining how plugins can extend and customize NOMAD Oasis.', location: 'Office 1.106', actors: ['Hampus Näsström'] }
+  { id: '2.1', image: '../public/speaker-hampus-naesstroem-camera.png', title: 'Hampus speaks to camera', description: 'Hampus speaks to camera while explaining how plugins can extend and customize NOMAD Oasis.', location: 'Office 1.108', actors: ['Hampus Näsström'] }
 ];
 
 const scene3Shots = [
