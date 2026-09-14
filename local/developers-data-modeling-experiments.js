@@ -11,7 +11,7 @@ const scene2Shots = [
 
 const raw = [
   [1,'Different instruments and file structures',0,8,'Experimental data comes from many instruments and techniques, often producing files with very different structures.','Multiple instruments in the CSMB lab; a scientist works with a dataset and different instrument outputs.','CSMB lab',['Scientist – TBC'],'mixed'],
-  [2,'From files to a common standard',8,18,'NOMAD Central supports measurement data from more than 10 experimental techniques and a growing range of file formats. We developed the pynxtools suite, which converts these diverse data into the community-developed NeXus standard, making them easier to explore, share, and reuse.','Lukas Pielsticker speaks to camera in the foyer in front of the lab window.','CSMB infront of the lab window',['Lukas Pielsticker'],'mixed'],
+  [2,'From files to a common standard',8,18,'NOMAD Central supports measurement data from from a constantly growing range of  experimental techniques and  file formats. We developed the pynxtools software, which converts these diverse data into the community-developed NeXus standard, making them easier to explore, share, and reuse.','Lukas Pielsticker speaks to camera in the foyer in front of the lab window.','CSMB infront of the lab window',['Lukas Pielsticker'],'mixed'],
   [3,'Join the community',26,4,'For more information visit our website and join us on Discord.','Lukas Pielsticker speaks to camera in the foyer in front of the lab window.','CSMB in front of the lab window',['Lukas Pielsticker'],'camera']
 ];
 
