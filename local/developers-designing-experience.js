@@ -10,9 +10,9 @@ const scene2Shots = [
 ];
 
 const raw = [
-  [1,'User experience matters',0,8,'NOMAD offers many features for managing scientific data. These need to be intuitive for researchers to find and use.','Berfin Güner discusses with a scientist in a meeting room; NOMAD is visible on a laptop screen.','Room 1.108',['Berfin Güner','Simon'],'camera'],
+  [1,'User experience matters',0,8,'NOMAD offers many features for managing scientific data. They need to be intuitive for researchers to find and use.','Berfin Güner discusses with a scientist in a meeting room; NOMAD is visible on a laptop screen.','Room 1.108',['Berfin Güner','Simon'],'camera'],
   [2,'Listening closely to researchers',8,10,'I work closely with researchers to understand how they use NOMAD and turn their feedback into a user experience that makes their everyday work easier.','Berfin speaks to camera with the screen behind her; NOMAD in action, while the UI work is shown beside it.','Room 1.108',['Berfin Güner'],'camera'],
-  [3,'Join the community',18,4,'For more information visit our website and join us on Discord.','Berfin speaks to camera with the screen behind her; NOMAD in action.','Room 1.108',['Berfin Güner'],'camera']
+  [3,'Join the community',18,4,'For more information visit our website or join us on Discord.','Berfin speaks to camera with the screen behind her; NOMAD in action.','Room 1.108',['Berfin Güner'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));

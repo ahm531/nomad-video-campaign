@@ -11,8 +11,8 @@ const scene2Shots = [
 
 const raw = [
   [1,'Data modeling in computations',0,6,'The same physical quantity can be calculated with different simulation codes and represented in very different ways.','Esma Boydas is working at her workstation with the computational workflow visible.','Office 1.108',['Esma Boydas'],'camera'],
-  [2,'Common data model',6,17,'NOMAD Central supports data from more than 60 simulation codes. Our parsers extract and validate the scientific data, harmonize information across codes, and map it into a common data model. This makes results easier to find, compare, and reuse.','Two-part scene: Esma speaks to camera while a screen recording explores a DFT entry.','Room 1.108 / Screen recording',['Esma Boydas'],'mixed'],
-  [3,'Join the community',23,4,'For more information visit our website and join us on Discord.','Esma speaks to camera with the screen behind her and a simulation model visible.','Office 1.108',['Esma Boydas'],'camera']
+  [2,'Common data model',6,17,'NOMAD supports data from more than 60 simulation codes. Our parsers extract and validate the scientific data, harmonize information across codes, and map them into a common data model. This makes results easier to find, compare, and reuse.','Two-part scene: Esma speaks to camera while a screen recording explores a DFT entry.','Room 1.108 / Screen recording',['Esma Boydas'],'mixed'],
+  [3,'Join the community',23,4,'For more information visit our website or join us on Discord.','Esma speaks to camera with the screen behind her and a simulation model visible.','Office 1.108',['Esma Boydas'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
