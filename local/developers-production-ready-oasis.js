@@ -15,9 +15,9 @@ const productionReadyShots = {
 
 const raw = [
 [1,'A proven infrastructure model',0,7,'NOMAD Oasis provides a proven model for research data infrastructure across research groups, institutions, and collaborative networks.','Researchers discussing NOMAD Oasis and collaborative research infrastructure.','Room 1.108',['Researchers – TBC'],'camera'],
-[2,'Federated data infrastructure',7,11,'Instead of moving everything into one central system, multiple Oases can form a federated data infrastructure, keeping data close to where it is produced while connecting distributed research communities.','Joseph Rudzinski speaks to camera.','TBD',['Joseph Rudzinski'],'camera'],
+[2,'Federated data infrastructure',7,11,'Instead of moving everything into one central system, multiple Oases can form a federated data infrastructure, keeping data close to where they are produced while connecting distributed research communities.','Joseph Rudzinski speaks to camera.','TBD',['Joseph Rudzinski'],'camera'],
 [3,'Distributed infrastructure across Europe',18,10,'This approach is already being applied to build distributed research data infrastructures across Europe, spanning multiple institutions, hundreds of instruments, diverse computational workflows, and research domains beyond materials science.','Split-screen: federated European infrastructure graphic on the left and Joseph Rudzinski speaking to camera on the right.','Graphic / TBD',['Joseph Rudzinski'],'mixed'],
-[4,'Join the community',28,4,'For more information visit our website and join us on Discord.','Joseph Rudzinski speaks to camera.','TBD',['Joseph Rudzinski'],'camera']
+[4,'Join the community',28,4,'For more information, visit our website or join us on Discord.','Joseph Rudzinski speaks to camera.','TBD',['Joseph Rudzinski'],'camera']
 ];
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
 let active=0,time=0,playing=false,timer=null;const $=id=>document.getElementById(id),fmt=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;

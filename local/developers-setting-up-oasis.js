@@ -18,7 +18,7 @@ const raw = [
 [1,'Infrastructure that fits your group',0,6,'A NOMAD Oasis can run on infrastructure of different sizes depending on the needs of your research group.','Martin working at a computer while deploying a NOMAD Oasis.','Office / infrastructure setting – TBC',['Martin Kuban'],'camera'],
 [2,'Guides and deployment templates',6,10,'Our deployment guides and ready-to-use templates make it easy to get an Oasis up and running, while providing the information you need to tailor it to your institution’s infrastructure.','Split-screen: Martin speaking to camera on the left and the installation documentation screen recording on the right.','Office – TBC / Screen recording',['Martin Kuban'],'mixed'],
 [3,'From one server to larger-scale deployments',16,10,'Whether you are deploying with Docker on a single server or using Helm and Kubernetes at larger scale, NOMAD provides reusable solutions for different infrastructure needs.','Split-screen: Docker, Helm, and Kubernetes screen recording on the left and Martin speaking to camera on the right.','Screen recording / Office – TBC',['Martin Kuban'],'mixed'],
-[4,'Join the community',26,4,'For more information, visit our website and join us on Discord.','Martin speaks to camera.','Office – TBC',['Martin Kuban'],'camera']
+[4,'Join the community',26,4,'For more information, visit our website or join us on Discord.','Martin speaks to camera.','Office – TBC',['Martin Kuban'],'camera']
 ];
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));
 let active=0,time=0,playing=false,timer=null;const $=id=>document.getElementById(id),fmt=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;

@@ -17,7 +17,7 @@ const raw = [
 [1,'Different data and workflows',0,7,'Research data and workflows vary widely across research groups. A rigid platform cannot cover every use case.','oasis-scene-10-team-discussion.png','Research environment',['Researchers – TBC'],'mixed'],
 [2,'Customize your Oasis',7,9,'NOMAD plugins let users extend and customize their Oasis, with new data models, parsing tools, dashboards, and automated workflows.','Hampus speaks to camera.','Office 1.106',['Hampus Näsström'],'camera'],
 [3,'Build, reuse, and learn faster',16,12,'You can build your own plugins using our templates, or reuse plugins developed by others. The growing NOMAD ecosystem already has hundreds of plugins to assist in supporting your research data management.','Split-screen: Hampus speaking to camera on the left and the plugin page screen recording on the right.','Office 1.106 / Screen recording',['Hampus Näsström'],'mixed'],
-[4,'Join the community',28,4,'For more information visit our website and join us on Discord.','speaker-hampus-naesstroem-camera.png','Office 1.106',['Hampus Näsström'],'camera']
+[4,'Join the community',28,4,'For more information, visit our website or join us on Discord.','speaker-hampus-naesstroem-camera.png','Office 1.106',['Hampus Näsström'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));

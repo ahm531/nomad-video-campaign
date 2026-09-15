@@ -11,8 +11,8 @@ const scene2Shots = [
 
 const raw = [
   [1,'Building the NOMAD ecosystem',0,6,'NOMAD brings together diverse research data, workflows, and scientific communities.','Lauri Himanen discusses with developers in a meeting, with code visible on the screen.','Room 1.108',['Lauri Himanen', 'Sascha', 'Amir', 'Thea'],'camera'],
-  [2,'Managing complexity behind NOMAD',6,15,'Our job as the development team is to manage the complexity behind the platform, making sure it remains stable, secure, and reliable so researchers can focus on the science.','Lauri speaks to camera with NOMAD performance and metrics shown on the screen, while Ahmed I works on code in parallel.','Office 1.108; Office 1.106',['Lauri Himanen','Ahmed I'],'camera'],
-  [3,'Join the community',21,4,'For more information visit our website and join us on Discord.','Lauri Himanen speaks to camera as the final framing settles into the screen.','Room 1.108',['Lauri Himanen'],'camera']
+  [2,'Managing complexity behind NOMAD',6,15,'Our job as the development team is to manage the complexity behind the platform, making sure that it remains stable, secure, and reliable, so researchers can focus on the science.','Lauri speaks to camera with NOMAD performance and metrics shown on the screen, while Ahmed I works on code in parallel.','Office 1.108; Office 1.106',['Lauri Himanen','Ahmed I'],'camera'],
+  [3,'Join the community',21,4,'For more information, visit our website or join us on Discord.','Lauri Himanen speaks to camera as the final framing settles into the screen.','Room 1.108',['Lauri Himanen'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));

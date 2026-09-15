@@ -13,10 +13,10 @@ const scene3Shots = [
 ];
 
 const raw = [
-[1,'Research workflows in action',0,5,'Research workflows often involve repeated steps of experimentation, data analysis, and deciding what to do next.','[Researcher spin coating → using laser microscope measurement → then reviewing the result]','CSMB labs',['Ahmed I.'],'camera'],
+[1,'Research workflows in action',0,5,'Research workflows often involve repeated steps of experimentation, data analysis, and decisions on what to do next.','[Researcher spin coating → using laser microscope measurement → then reviewing the result]','CSMB labs',['Ahmed I.'],'camera'],
 [2,'Automated workflows in Oasis',5,10,'With NOMAD Actions, researchers can trigger predefined workflows directly from their Oasis. They can be executed locally or sent to external computing resources.','Screen recording of NOMAD Actions for a research workflow.','Screen recording',['Screen only'],'screen'],
 [3,'Connecting data to workflows',15,9,'Action plugins provide a flexible framework for connecting research data with processing, simulation, and AI workflows, making complex tasks easier to automate and reproduce.','speaker-ilyas-camera.png','Office 1.106',['Ahmed I.'],'camera'],
-[4,'Join the community',24,4,'For more information visit our website and join us on Discord.','Ilyas speaks to camera with a focused research workflow context.','Office 1.106',['Ilyas'],'camera']
+[4,'Join the community',24,4,'For more information, visit our website or join us on Discord.','Ilyas speaks to camera with a focused research workflow context.','Office 1.106',['Ilyas'],'camera']
 ];
 
 const scenes = raw.map(([id,title,start,duration,sentence,footage,location,actors,type]) => ({id,title,start,duration,sentence,footage,location,actors,type}));

@@ -1,9 +1,9 @@
 const totalRuntime = 36;
 const raw = [
-[1,'Digital tools for laboratory workflows',0,6,'Materials synthesis and sample preparation involve many steps and parameters that need to be documented to ensure reproducibility.','Thin-film deposition work in the materials synthesis lab.','CSMB Joint lab',['Sarthak or some scientist from the lab'],'camera'],
+[1,'Digital tools for laboratory workflows',0,6,'Materials synthesis and sample preparation involve many steps and parameters, which need to be documented to ensure reproducibility.','Thin-film deposition work in the materials synthesis lab.','CSMB Joint lab',['Sarthak or some scientist from the lab'],'camera'],
 [2,'Digital tools for laboratory workflows',6,10,'NOMAD Oasis provides a native electronic lab notebook with templates and tools for documenting samples, processes, and measurements in a structured and connected way.','Screen recording of a custom ELN on evaporation','Screen recording',['Screen only'],'screen'],
 [3,'Digital tools for laboratory workflows',16,12,'We also develop practical tools that make laboratory documentation easier, including voice-to-text input, QR codes for tracking samples, and automatic retrieval of chemical information from databases such as PubChem.','Sarthak Kapoor speaks to camera with the pin board in the background.','Common room with the pin board',['Sarthak Kapoor'],'camera'],
-[4,'Join the community',28,4,'For more information visit our website and join us on Discord.','Sarthak Kapoor speaks to camera with the pin board in the background.','Common room with the pin board',['Sarthak Kapoor'],'camera']
+[4,'Join the community',28,4,'For more information, visit our website or join us on Discord.','Sarthak Kapoor speaks to camera with the pin board in the background.','Common room with the pin board',['Sarthak Kapoor'],'camera']
 ];
 const sceneImageMap = {
   1: { src: '../public/developers-synthesis-scene-01-thin-film-lab.png', alt: 'Thin film deposition lab work in the materials synthesis lab' },
