@@ -11,7 +11,7 @@ const scene2Shots = [
 
 const raw = [
 [1,'Catalysis search apps',0,9,'NOMAD Central lets researchers explore millions of materials data entries, with powerful search and filtering across materials, properties and methods.','Julia works in a catalysis research workspace with the relevant analysis tools open.','Room 1.106',['Julia Schumann'],'camera'],
-  [2,'Tailored search apps',9,18,'For specific domains, including solar cells and heterogeneous catalysis, we have curated thousands of data entries and developed tailored search apps to make this data accessible through domain-specific dashboards—for example, for filtering catalysts by reaction conditions, conversion, or selectivity.','Julia speaks to camera with the screen behind her while a catalysis search app is shown beside her.','Room 1.106',['Julia Schumann'],'mixed'],
+  [2,'Tailored search apps',9,18,'For specific domains, including solar cells and heterogeneous catalysis, we have curated thousands of data entries and developed tailored search apps to make these data accessible through domain-specific dashboards—for example, for filtering catalysts by reaction conditions, conversion, or selectivity.','Julia speaks to camera with the screen behind her while a catalysis search app is shown beside her.','Room 1.106',['Julia Schumann'],'mixed'],
   [3,'Join the community',27,4,'For more information visit our website and join us on Discord.','Julia speaks to camera with the screen behind her.','Room 1.106',['Julia Schumann'],'camera']
 ];
 

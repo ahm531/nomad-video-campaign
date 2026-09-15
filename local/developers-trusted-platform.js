@@ -1,6 +1,6 @@
 const totalRuntime = 34;
 const raw = [
-[1,'Long-term data preservation',0,14,'When researchers publish their data, they need to trust that it will remain available for years to come. Research data uploaded to NOMAD is stored at the Max Planck Computing and Data Facility in Germany.','MPCDF footage or a data-center style visual.','MPCDF, Germany',['Research data storage – TBC'],'mixed'],
+[1,'Long-term data preservation',0,14,'When researchers publish their data, they need to trust that it will remain available for years to come. Research data uploaded to NOMAD are stored at the Max Planck Computing and Data Facility in Germany.','MPCDF footage or a data-center style visual.','MPCDF, Germany',['Research data storage – TBC'],'mixed'],
 [2,'Regular backups and long-term preservation',14,12,'With regular backups and a commitment to preserve data for at least ten years, we make sure their research is preserved for the future.','Raphael Ritz speaks to camera.','Office 1.108',['Raphael Ritz'],'camera'],
 [3,'Join the community',26,4,'For more information visit our website and join us on Discord.','Raphael Ritz speaks to camera.','Office 1.108',['Raphael Ritz'],'camera']
 ];
