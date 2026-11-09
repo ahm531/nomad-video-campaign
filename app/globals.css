@@ -54,3 +54,16 @@
 .shot-detail-number{width:31px;height:24px;font-size:8px}
 .shot-production-label{display:block;margin:7px 0 3px;color:#657181;font:600 7px var(--font-geist-mono);letter-spacing:.09em}
 .shot-production-label+p{margin-top:0}
+
+.cancelled-label{color:#f87171}
+
+/* Production status badges alongside each video's metadata. */
+.video-meta .video-status{font-weight:600;border-radius:3px}
+.video-meta .status-draft{color:#b6c0cd;border-color:#536071;background:rgba(182,192,205,.08)}
+.video-meta .status-ready-for-review{color:#7dd3fc;border-color:#35647b;background:rgba(125,211,252,.08)}
+.video-meta .status-under-review{color:#c4b5fd;border-color:#66578b;background:rgba(196,181,253,.08)}
+.video-meta .status-revisions-requested,.video-meta .status-under-revision{color:#fcd34d;border-color:#7c672a;background:rgba(252,211,77,.08)}
+.video-meta .status-missing-materials{color:#fdba74;border-color:#875b35;background:rgba(253,186,116,.08)}
+.video-meta .status-approved{color:#bef264;border-color:#58752d;background:rgba(190,242,100,.08)}
+.video-meta .status-delivered{color:#6ee7b7;border-color:#35745c;background:rgba(110,231,183,.08)}
+.video-meta .status-cancelled{color:#f87171;border-color:#874242;background:rgba(248,113,113,.08)}
