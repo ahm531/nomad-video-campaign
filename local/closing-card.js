@@ -6,7 +6,7 @@ const closingCards = {
   'developers-data-modeling-computations.html': { product: 'central', speaker: 'Esma Boydas', image: 'speaker-esma-boydas-camera.png' },
   'developers-data-modeling-experiments.html': { product: 'central', speaker: 'Lukas Pielsticker', image: 'speaker-lukas-pielsticker-camera.png' },
   'developers-domain-search-apps.html': { product: 'central', speaker: 'Julia Schumann', image: 'speaker-julia-schumann-camera.png' },
-  'developers-trusted-platform.html': { product: 'central', speaker: 'Raphael Ritz' },
+  'developers-trusted-platform.html': { product: 'central', speaker: 'Raphael Ritz', image: 'speaker-raphael-ritz-office.png' },
   'developers-automating-research-workflows.html': { product: 'oasis', speaker: 'Ilyas', image: 'speaker-ilyas-camera.png' },
   'developers-extending-nomad-plugins.html': { product: 'oasis', speaker: 'Hampus Näsström', image: 'speaker-hampus-naesstroem-camera.png' },
   'developers-synthesis-eln-data-modeling.html': { product: 'oasis', speaker: 'Sarthak Kapoor', image: 'speaker-sarthak-kapoor-camera.png' },
