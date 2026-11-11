@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>NOMAD Oasis · Incorporating data literacy in lab courses</title>
-  <link rel="stylesheet" href="../app/globals.css?v=17">
+  <link rel="stylesheet" href="../app/globals.css?v=19">
   <style>
     .round-button{font-size:13px}.detail-icon{font-size:16px}.empty{padding:24px;color:#758192;font-size:12px}
+
+    .literacy-visual{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr);background:#080c12}.literacy-visual[hidden]{display:none}.literacy-pair{grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.literacy-visual img{width:100%;height:100%;min-width:0;min-height:0;object-fit:contain}.preview:has(.literacy-visual:not([hidden])) .shot-label,.preview:has(.literacy-visual:not([hidden])) .preview-time{z-index:3}
   </style>
 </head>
 <body>
@@ -18,7 +20,7 @@
         <div class="eyebrow">NOMAD VIDEO CAMPAIGN</div>
         <h1>NOMAD Oasis · Incorporating data literacy in lab courses</h1>
       </div>
-<div class="topbar-meta"><span>2 scenes</span><span class="dot"></span><span>00:19</span></div>
+<div class="topbar-meta"><span>5 scenes</span><span class="dot"></span><span>00:34</span></div>
     </header>
 
     <section class="timeline" aria-label="Video timeline">
@@ -26,7 +28,7 @@
         <div class="transport">
           <button id="play" class="round-button" aria-label="Play timeline">▶</button>
           <span id="timecode" class="timecode">0:00</span>
-<span class="time-total">/ 0:19</span>
+<span class="time-total">/ 0:34</span>
         </div>
         <div class="legend">
           <span><i class="camera-key"></i>Camera</span>
@@ -34,11 +36,11 @@
           <span><i class="mixed-key"></i>Mixed</span>
         </div>
       </div>
-<div class="ruler-row"><span>0:00</span><span>0:06</span><span>0:13</span><span>0:19</span></div>
+<div class="ruler-row"><span>0:00</span><span>0:10</span><span>0:20</span><span>0:34</span></div>
       <div class="track-wrap">
         <div id="track" class="track"></div>
         <div id="playhead" class="playhead"><span></span></div>
-<input id="scrubber" class="scrubber" type="range" min="0" max="19" step=".1" value="0" aria-label="Seek video timeline">
+<input id="scrubber" class="scrubber" type="range" min="0" max="34" step=".1" value="0" aria-label="Seek video timeline">
       </div>
     </section>
 
@@ -49,7 +51,7 @@
             <span class="section-label">TRANSCRIPT</span>
             <h2>Sentences</h2>
           </div>
-          <span id="count" class="count">2</span>
+          <span id="count" class="count">5</span>
         </div>
         <label class="search">⌕<input id="search" placeholder="Search transcript"></label>
         <div id="sentence-list" class="sentence-list"></div>
@@ -115,6 +117,6 @@
       </aside>
     </div>
   </main>
-<script src="./users-incorporating-data-literacy-in-lab-courses.js?v=3"></script>
+<script src="./users-incorporating-data-literacy-in-lab-courses.js?v=4"></script>
 <script src="./final-logo.js?v=3"></script></body>
 </html>
